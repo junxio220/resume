@@ -1,0 +1,567 @@
+@import "../../publicLab/reset.less";
+@import "animate.min.less";
+@import "swiper-3.4.2.min.less";
+
+html {
+  font-size: 100px; /*640px: 1RM = 100px*/
+}
+
+html, body {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: #f4f4f4;
+  z-index: -4;
+}
+
+.mainBox {
+  position: relative;
+  margin: 0 auto;
+  max-width: 640px;
+  height: 100%;
+  background: #fff;
+  z-index: -3;
+}
+
+.loadingBox, .phoneBox, .messageBox, .cubeBox, .detailBox {
+  display: none;
+  position: relative; //=>让当前区域的后代元素都相对于本区域定位
+  height: 100%;
+  overflow: hidden;
+}
+
+/*--LODING--*/
+.loadingBox {
+  background: #000;
+
+  .title {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: unit((-1.4/2)+(-1.5), rem);
+    width: 100%;
+    height: 1.4rem;
+
+    text-align: center;
+    color: #fff;
+    letter-spacing: .04rem;
+
+    h1 {
+      line-height: .75rem;
+      font-size: .5rem;
+    }
+
+    h2 {
+      margin-top: .2rem;
+      line-height: .45rem;
+      font-size: .25rem;
+    }
+  }
+
+  .progress {
+    @w: 4.6;
+    @h: .3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: unit(-@w/2, rem);
+    margin-top: unit(-@h/2+.5, rem);
+    width: unit(@w, rem);
+    height: unit(@h, rem);
+    background: #fff;
+    border-radius: unit(@h/2, rem);
+
+    .run {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: unit(@h, rem);
+      border-radius: unit(@h/2, rem);
+      transition: .3s;
+
+      background: -webkit-linear-gradient(left bottom, #5cb85c 0%, #5cb85c 25%, #74c274 25%, #74c274 50%, #5cb85c 50%, #5cb85c 75%, #74c274 75%, #74c274 100%);
+      background-size: unit(@h, rem) unit(@h, rem);
+      animation: loadingMove 1s linear infinite both;
+    }
+  }
+}
+
+@keyframes loadingMove {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 -.3rem;
+  }
+}
+
+/*
+ * 移动端开发的时候，我们使用的大部分CSS3样式属性，都需要写两套：
+ * -webkit-xxx：
+ * xxx：
+ *
+ * 加前缀的的一定要在前面，不加前缀的在后面（顺序不能乱），只有这样才能适配基本的IOS和安卓系统
+ * transition、ainimation、@keyframes、transform、gradient、flex
+ */
+
+/*--PHONE--*/
+.phoneBox {
+  background: url("../img/phoneBg.jpg") no-repeat;
+  background-size: cover;
+  z-index: -2;
+
+  .header {
+    position: absolute;
+    top: .5rem;
+    left: 50%;
+    margin-left: unit(-2.62/2, rem);
+    width: 2.62rem;
+
+    .logo {
+      display: block;
+      width: 100%;
+      height: 1.25rem;
+    }
+
+    .time {
+      display: none;
+      margin-top: .1rem;
+      line-height: .3rem;
+      text-align: center;
+      color: #fff;
+      font-size: .3rem;
+      letter-spacing: .05rem;
+    }
+  }
+
+  .listen {
+    position: absolute;
+    left: 50%;
+    margin-left: unit(-5.2/2, rem);
+    bottom: .3rem;
+    width: 5.2rem;
+    height: 3.6rem;
+    background: url("../img/call.png") no-repeat;
+    background-size: 100% 100%;
+
+    .touch {
+      position: absolute;
+      right: .33rem;
+      bottom: .5rem;
+      z-index: 10;
+      width: 1.42rem;
+      height: 1.42rem;
+    }
+    .move {
+      .touch;
+      z-index: -1;
+      box-sizing: border-box;
+      border: .03rem solid #0F0;
+      border-radius: 50%;
+      animation: listenTouchmove .8s linear infinite both;
+    }
+
+  }
+
+  .listen {
+    display: block;
+  }
+
+  .detail {
+    position: absolute;
+    bottom: .3rem;
+
+    left: 50%;
+    margin-left: unit(-5.2/2, rem);
+    width: 5.2rem;
+    height: 6.59rem;
+    background: url("../img/calling.png") no-repeat;
+    background-size: 100% 100%;
+
+    //=>init positon
+    transition: .5s;
+    transform: translateY(6.89rem);
+
+    .touch {
+      position: absolute;
+      bottom: .23rem;
+      z-index: 10;
+      left: 50%;
+      margin-left: unit(-1.32/2, rem);
+      width: 1.3rem;
+      height: 1.3rem;
+    }
+  }
+}
+
+@keyframes listenTouchmove {
+  0% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+/*--MESSAGE--*/
+.messageBox {
+  background: #eaeaea;
+  .talkBox {
+    margin-top: .2rem;
+    transition: .3s;
+    li {
+      position: relative;
+      min-width: 2.4rem;
+      max-width: 3.6rem;
+      margin-bottom: .4rem;
+      padding: .25rem;
+      line-height: .4rem;
+      font-size: .26rem;
+      border-radius: .1rem;
+      color: #000;
+
+      //=>init position
+      opacity: 0;
+      transition: .3s;
+      transform: translateY(1rem);
+
+      img {
+        position: absolute;
+        width: .82rem;
+        height: .82rem;
+        border-radius: 50%;
+      }
+
+      i {
+        position: absolute;
+        top: .2rem;
+        width: .1rem;
+        height: .2rem;
+      }
+      &.student {
+        float: left;
+        margin-left: 1.25rem;
+        background: #fff;
+        border: .02rem solid #cacaca;
+        img {
+          top: -0.02rem;
+          left: -1rem;
+        }
+        i {
+          left: -.1rem;
+          background: url("../img/arrow_l.png") no-repeat;
+          background-size: 100%;
+        }
+      }
+
+      &.me {
+        float: right;
+        margin-right: 1.25rem;
+        background: #a2e45c;
+        border: .02rem solid #96b474;
+        img {
+          top: -0.02rem;
+          right: -1rem;
+        }
+        i {
+          right: -.1rem;
+          background: url("../img/arrow_R.png") no-repeat;
+          background-size: 100%;
+        }
+      }
+
+    }
+  }
+
+  .keyboard {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5.66rem;
+    background: url("../img/keyboard.png") no-repeat;
+    background-size: 100%;
+    //=>init position
+
+    transition: .3s;
+    transform: translateY(4.8rem);
+
+    span {
+      display: none;
+      position: absolute;
+      top: .25rem;
+      left: 1rem;
+      width: 4rem;
+      height: .4rem;
+      line-height: .4rem;
+      font-size: .25rem;
+      color: #000;
+    }
+
+    .submit {
+      display: none;
+      position: absolute;
+      right: .06rem;
+      bottom: .02rem;
+      width: 1.4rem;
+      height: .74rem;
+      background: url("../img/enter.png") no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+}
+
+/*--CUBE--*/
+.cubeBox {
+  background: url("../img/cube_bg.jpg") no-repeat;
+  background-size: cover;
+
+  .tip {
+    position: absolute;
+    left: 50%;
+    bottom: .5rem;
+    margin-left: unit(-1.7/2, rem);
+    width: 1.7rem;
+    height: .44rem;
+  }
+
+  .box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: unit(-5.1/2, rem) 0 0 unit(-5.1/2, rem);
+    width: 5.1rem;
+    height: 5.1rem;
+
+    li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+
+    }
+  }
+
+  /*3D*/
+  perspective: 2000px;
+
+  @l: unit(5.1, rem);
+  .box {
+    transform-style: preserve-3d;
+    transform: scale(.6) rotateX(-20deg) rotateY(45deg);
+    transition: .3s;
+    li {
+      //=> 正反面
+      &:nth-child(1) {
+        transform: translateZ(@l/2);
+      }
+      &:nth-child(2) {
+        transform: translateZ(-@l/2) rotateY(180deg);
+      }
+      //=> 左右
+      &:nth-child(3) {
+        transform: translateX(-@l/2) rotateY(-90deg);
+      }
+      &:nth-child(4) {
+        transform: translateX(@l/2) rotateY(90deg);
+      }
+      //=> 上下
+      &:nth-child(5) {
+        transform: translateY(-@l/2) rotateX(90deg);
+      }
+      &:nth-child(6) {
+        transform: translateY(@l/2) rotateX(-90deg);
+      }
+    }
+  }
+}
+
+/*DETAIL*/
+.detailBox {
+  /*RETURN*/
+  .returnLink {
+    position: absolute;
+    z-index: 99;
+    right: .2rem;
+    top: .2rem;
+    width: .64rem;
+    height: .64rem;
+    background: url("../img/jhs_return.png") no-repeat;
+    background-size: 100% 100%;
+  }
+
+  .swiper-container, .swiper-slide {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    font-family: "Microsoft JhengHei";
+  }
+
+  /*PAGE1*/
+  .page1 {
+    perspective: 2000px;
+
+    dl {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: unit(-6.6/2, rem) 0 0 unit(-5.4/2, rem);
+      width: 5.4rem;
+      height: 6.6rem;
+      transform-style: preserve-3d;
+
+      dt, dd {
+        color: black;
+        box-sizing: border-box;
+        height: .6rem;
+        line-height: .6rem;
+        background: #8fbb4c;
+      }
+      dt {
+        font-size: .4rem;
+        color: yellow;
+        text-align: center;
+      }
+
+      dd {
+        border-top: .02rem dashed rgba(255, 255, 255, .3);
+
+        em, p {
+          display: inline-block;
+        }
+        em {
+          margin: 0 0.15rem 0.1rem 0.15rem;
+          width: .42rem;
+          height: .42rem;
+          line-height: .42rem;
+          text-align: center;
+          color: #fff;
+          font-size: .2rem;
+          font-style: normal;
+          background: url("../img/jhs_em.png") no-repeat;
+          background-size: 100% 100%;
+          vertical-align: middle;
+        }
+        p {
+          margin-bottom: -0.02rem;
+          font-size: .28rem;
+          width: 4rem;
+          height: 0.58rem;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          overflow: hidden;
+          vertical-align: top;
+        }
+      }
+
+    }
+  }
+
+  .page2 {
+    background: #FFF9C1;
+
+    h2{
+      position: absolute;
+      left: 0;
+      top: .8rem;
+      width: 100%;
+      line-height: .9rem;
+      text-align: center;
+      font-size: 0.6rem;
+      font-weight: lighter;
+    }
+
+    img{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin: -.48rem 0 0 -.48rem;
+      width: 0.96rem;
+      height: 0.96rem;
+
+      /*&:nth-child(1){} //=> .page2 img:nth-child(1) 获取page2下第一个子元素(并且第一个子元素的标签需要是img)*/
+      //=> 首先获取page2中所有的img，然后再获取所有的IMG中的第一个
+      &:nth-of-type(1){
+        margin: unit(-0.96/2,rem) 0 0 unit(-0.96/2,rem);
+        width: 0.96rem;
+        height: 0.96rem;
+      }
+    }
+
+    h2,img{
+      opacity: 0;
+    }
+  }
+
+  #page2{
+    h2{
+      animation: zoomInDown 1s both;
+    }
+
+    img{
+      &:not(:nth-of-type(1)){
+        transition: .3s;
+        opacity: 1;
+        animation: swing 0.8s .3s infinite both;
+      }
+      &:nth-of-type(1){
+        opacity: 1;
+        animation: shake 2s both;
+      }
+      //=>上
+      &:nth-of-type(2){
+        margin-top: -2.9rem;
+      }
+      // 右上
+      &:nth-of-type(3){
+        margin-top: -1.7rem;
+        margin-left: 1.5rem;
+      }
+      // 右下
+      &:nth-of-type(4){
+        margin-top:  .7rem;
+        margin-left: 1.5rem;
+      }
+      // 下
+      &:nth-of-type(5){
+        margin-top: 1.9rem;
+      }
+      // 左下
+      &:nth-of-type(6){
+        margin-top: .7rem;
+        margin-left: -2.5rem;
+      }
+      // 左上
+      &:nth-of-type(7){
+        margin-top: -1.7rem;
+        margin-left: -2.5rem;
+      }
+    }
+
+  }
+
+  .page3 {
+    background: bisque;
+  }
+
+  .page4 {
+    background: #faca71;
+  }
+
+  .page5 {
+    background: #fbffe8;
+  }
+
+  .page6 {
+    background: #5975ff;
+  }
+
+}
