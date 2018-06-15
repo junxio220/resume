@@ -36,7 +36,7 @@ let loadingRender = (function () {
 
     return {
         init: function () {
-            $loadingBox.css('display', 'block'); //=>我们在CSS中吧所有区域的display都先设置为none，开发哪个区域就执行哪个方法的init方法，在这个方法当中首先控制当前区域展示（开发哪个区域，哪个区域就展示，其他区域都是隐藏的）
+            $loadingBox.css('display', 'block');
             computed();
         }
     }
@@ -137,8 +137,6 @@ let messageRender = (function ($) {
             });
             //=>第三条完全显示后立即调取出键盘（STEP === 2）
             if (step === 2) {
-                //=> transitionend:当前元素正在运行的css3过渡动画完成，就会触发这个事件（有几个样式需要改变，就会被触发执行几次）
-                //=> one是jq中事件绑定方法，主要想要实现当前事件只绑定一次，触发一次后事件自动移除
                 $cur.one('transitionend', () => {
                     $keyBoard.css('transform', 'translateY(0)')
                         .one('transitionend', textMove);
@@ -205,10 +203,12 @@ let messageRender = (function ($) {
 })(Zepto);
 
 /*--CUBE--*/
-let preDf = function (e) {
+$(document)[0].addEventListener('touchstart',function (e) {
     e.preventDefault();
-};
-$(document).on('touchstart touchmove touchend', preDf);
+},{passive:false});
+$(document)[0].addEventListener('touchmove',function (e) {
+    e.preventDefault();
+},{passive:false});
 let cube = (function () {
     let $cubeBox = $('.cubeBox'),
         $box = $cubeBox.find('.box');
@@ -287,10 +287,6 @@ let detailRender = (function () {
     let $makisuBox = jQuery('#makisuBox');
 
     let change = function (example) {
-        //example.activeIndex //=> 当前活动块的索引
-        //example.slides //=>数组，存储了当前所有活动块
-        //example.slides[example.activeIndex] //=>当前活动块
-
         let {slides: slideAry, activeIndex} = example;
 
         //=> PAGE1单独处理
@@ -330,10 +326,7 @@ let detailRender = (function () {
                     $detailBox.css('display', 'none');
                     $cubeBox.css('display', 'block');
                 });
-
-                //=> 不存在实例的情况下我们初始化，如果初始化过了，下一次直接运动到具体位置即可，不需要重新的初始化
                 swiperExample = new Swiper('.swiper-container', {
-                    // loop:true, //=>如果我们采用的切换效果是3D的，最好不要设置无缝衔接循环切换，在部分安卓机中，SWIPER这块的处理是有一些BUG的
                     effect: 'coverflow',
                     onInit: change,
                     onTransitionEnd: change
@@ -341,7 +334,7 @@ let detailRender = (function () {
             }
 
             index = index > 5 ? 5 : index;
-            swiperExample.slideTo(index, 0); //=>运动到指定索引的SLIDE位置，第二个参数是speed，我们设置0是让其立即运动到指定位置;
+            swiperExample.slideTo(index, 0);
         }
     }
 })();
