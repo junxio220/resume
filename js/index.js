@@ -346,5 +346,5 @@ let detailRender = (function () {
     }
 })();
 
-loadingRender.init();
+loadingRender.init(); //=> 初始化程序
 
