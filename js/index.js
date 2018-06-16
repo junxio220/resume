@@ -99,11 +99,18 @@ let phoneRender = (function ($) {
         messageRender.init();
     };
 
+    //=>触屏播放
+    let touchPlay = function(){
+        $(document).on('touchstart',function () {
+            audioBell.play();
+        });
+    };
+
     return {
         init: function () {
             $phoneBox.css('display', 'block');
             //=> bell play
-            audioBell.play();
+            touchPlay();
             //=> listen-touch
             $listenTouch.tap($phonePlan.fire);
         }
