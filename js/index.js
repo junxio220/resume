@@ -101,7 +101,7 @@ let phoneRender = (function ($) {
 
     //=>触屏播放
     let touchPlay = function(){
-        $(document).on('touchstart',function () {
+        $phoneBox.one('touchstart',function () {
             audioBell.play();
         });
     };
