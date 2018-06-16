@@ -1,37 +1,15 @@
-## Welcome to GitHub Pages
+## 这是我的简历
+@(2018/6/16) 修改
 
-You can use the [editor on GitHub](https://github.com/junxio220/resume/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+只是学习JS移动端响应式开发的一个小demo，仅仅是作为练习。
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## bug
 
-### Markdown
+1、用自己的6S微信打开项目出现开始无法播放设置好的音乐，待解决。
+2、魔方页面滑动未阻止浏览器的默认事件，出现页面上下滑动出现空白(已解决)
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## 微信
 
-```markdown
-Syntax highlighted code block
+> 这是我的微信号：junxio220
 
-# Header 1
-## Header 2
-### Header 3
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/junxio220/resume/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
