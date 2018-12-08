@@ -353,4 +353,4 @@ let detailRender = (function() {
   };
 })();
 
-messageRender.init(); //=> 初始化程序
+loadingRender.init(); //=> 初始化程序
