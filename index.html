@@ -1,197 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0,user-scalable=no,minimum-scale=1.0">
-    <link rel="stylesheet" href="css/index.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=0,user-scalable=no,minimum-scale=1.0"
+    />
+    <link rel="stylesheet" href="css/index.min.css" />
+    <script src="js/prefixfree.min.js"></script>
     <title>JohnsonS</title>
     <script>
-        ~function(){
-            let computed =function(){
-                let desW = 640;
-                let devW = document.documentElement.clientWidth;
-                if(devW >= 640)return ;
-                document.documentElement.style.fontSize = devW/desW * 100 + 'px';
-            };
-            computed();
-            window.addEventListener('resize',computed,false);
-        }();
+      ~(function() {
+        let computed = function() {
+          let desW = 640;
+          let devW = document.documentElement.clientWidth;
+          if (devW >= 640) return;
+          document.documentElement.style.fontSize = (devW / desW) * 100 + "px";
+        };
+        computed();
+        window.addEventListener("resize", computed, false);
+      })();
     </script>
-</head>
-<body>
-<div class="mainBox">
-    <!--LODING-->
-    <section class="loadingBox">
+  </head>
+  <body>
+    <div class="mainBox">
+      <!-- LODING -->
+      <section class="loadingBox">
         <div class="title">
-            <h1>JohnsonS</h1>
-            <h2>交互性简历</h2>
+          <h1>JohnsonS</h1>
+          <h2>交互性简历</h2>
         </div>
-        <div class="progress">
-            <div class="run"></div>
-        </div>
-    </section>
+        <div class="progress"><div class="run"></div></div>
+      </section>
 
-    <!--PHONE-->
-    <section class="phoneBox">
+      <!-- PHONE -->
+      <section class="phoneBox">
         <div class="header">
-            <img src="img/myAddress.png" alt="" class="logo">
-            <span class="time">00:00</span>
+          <img src="img/myAddress.png" alt="" class="logo" />
+          <span class="time">00:00</span>
         </div>
         <div class="listen">
-            <div class="move"></div>
-            <a href="javascript:;" class="touch"></a>
+          <div class="move"></div>
+          <a href="javascript:;" class="touch"></a>
         </div>
-        <div class="detail">
-            <a href="javascript:;" class="touch"></a>
-        </div>
-        <!--AUDIO-->
+        <div class="detail"><a href="javascript:;" class="touch"></a></div>
+        <!-- AUDIO -->
         <audio src="audio/bell.mp3" loop preload="none" id="audioBell"></audio>
         <audio src="audio/tankyou.mp3" preload="none" id="audioTKU"></audio>
-    </section>
+      </section>
 
-    <!--MESSAGE-->
-    <section class="messageBox">
+      <!-- MESSAGE -->
+      <section class="messageBox">
         <ul class="talkBox clearfix">
-            <li class="student">
-                <img src="img/studentphoto.png" alt="" class="photo">
-                <i></i>
-                请问你会什么语言技术呢？
-            </li>
-            <li class="me">
-                <img src="img/mephoto.png" alt="" class="photo">
-                <i></i>
-                JavaScript、CSS、nodejs等等
-            </li>
-            <li class="student">
-                <img src="img/studentphoto.png" alt="" class="photo">
-                <i></i>
-                话糙理不糙，打枪吧
-            </li>
-            <li class="me">
-                <img src="img/mephoto.png" alt="" class="photo">
-                <i></i>
-                我还是去搬砖吧
-            </li>
-            <li class="me">
-                <img src="img/mephoto.png" alt="" class="photo">
-                <i></i>
-                噢噢噢噢哦哦哦哦哦哦
-            </li>
-            <li class="me">
-                <img src="img/mephoto.png" alt="" class="photo">
-                <i></i>
-                嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻嘻
-            </li>
-            <li class="student">
-                <img src="img/studentphoto.png" alt="" class="photo">
-                <i></i>
-                疯了吧
-            </li>
+          <li class="student">
+            <img src="img/studentphoto.png" alt="" class="photo" />
+            <i></i> 你会哪些web技术栈？
+          </li>
+          <li class="me">
+            <img src="img/mephoto.png" alt="" class="photo" />
+            <i></i> 熟悉前端三件套html css js
+          </li>
+          <li class="student">
+            <img src="img/studentphoto.png" alt="" class="photo" />
+            <i></i> 会哪些库和框架呢？
+          </li>
+          <li class="me">
+            <img src="img/mephoto.png" alt="" class="photo" />
+            <i></i> 了解jQuery，熟悉Vue，React还在学习中
+          </li>
+          <li class="me">
+            <img src="img/mephoto.png" alt="" class="photo" />
+            <i></i> 这个是我的个人主页
+          </li>
+          <li class="me">
+            <img src="img/mephoto.png" alt="" class="photo" />
+            <i></i> junxio.site
+          </li>
+          <li class="me">
+              <img src="img/mephoto.png" alt="" class="photo" />
+              <i></i> 这个是我的简书
+          </li>
+          <li class="me">
+              <img src="img/mephoto.png" alt="" class="photo" />
+              <i></i> jianshu.com/u/8c0f62fa164f
+          </li>
+          <li class="student">
+            <img src="img/studentphoto.png" alt="" class="photo" />
+            <i></i> ok ok~
+          </li>
         </ul>
         <div class="keyboard">
-            <span>我还是去搬砖吧</span>
-            <a href="javascript:;" class="submit"></a>
+          <span>了解jQuery，熟悉Vue</span> <a href="javascript:;" class="submit"></a>
         </div>
-        <audio src="audio/jhs_yanbaer.mp3" loop preload="none"
-               id="musicAudio"></audio>
-    </section>
+        <audio
+          src="audio/jhs_yanbaer.mp3"
+          loop
+          preload="none"
+          id="musicAudio"
+        ></audio>
+      </section>
 
-    <!--CUBE-->
-    <section class="cubeBox">
+      <!-- CUBE -->
+      <section class="cubeBox">
         <ul class="box">
-            <li><img src="img/cube_1.png" alt=""></li>
-            <li><img src="img/cube_2.png" alt=""></li>
-            <li><img src="img/cube_3.png" alt=""></li>
-            <li><img src="img/cube_4.png" alt=""></li>
-            <li><img src="img/cube_5.png" alt=""></li>
-            <li><img src="img/cube_6.png" alt=""></li>
+          <li><img src="img/cube_1.png" alt="" /></li>
+          <li><img src="img/cube_2.png" alt="" /></li>
+          <li><img src="img/cube_3.png" alt="" /></li>
+          <li><img src="img/cube_4.png" alt="" /></li>
+          <li><img src="img/cube_5.png" alt="" /></li>
+          <li><img src="img/cube_6.png" alt="" /></li>
         </ul>
-        <img src="img/cube_tip.png" alt="" class="tip">
-    </section>
-    
-    <!--DETAIL-->
-    <section class="detailBox">
-        <!--RETURN-->
-        <a href="javascript:;" class="returnLink"></a>
-        <!--SWIPER-->
-        <div class="swiper-container">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide page1">
-                    <dl id="makisuBox">
-                        <dt>自我介绍</dt>
-                        <dd>
-                            <em>01</em>
-                            <p>姓名：钟俊雄</p>
-                        </dd>
-                        <dd>
-                            <em>02</em>
-                            <p>性别：男</p>
-                        </dd>
-                        <dd>
-                            <em>03</em>
-                            <p>年龄：22</p>
-                        </dd>
-                        <dd>
-                            <em>04</em>
-                            <p>在读学校：东莞理工学院</p>
-                        </dd>
-                        <dd>
-                            <em>05</em>
-                            <p>编程语言：JavaScript、css3</p>
-                        </dd>
-                        <dd>
-                            <em>06</em>
-                            <p>户籍：广东省兴宁市</p>
-                        </dd>
-                        <dd>
-                            <em>07</em>
-                            <p>学历：本科</p>
-                        </dd>
-                        <dd>
-                            <em>08</em>
-                            <p>工作经验：null</p>
-                        </dd>
-                        <dd>
-                            <em>09</em>
-                            <p>邮箱：879917302@qq.com</p>
-                        </dd>
-                        <dd>
-                            <em>10</em>
-                            <p>tel：13049896626</p>
-                        </dd>
-                        <dd>
-                            <em>11</em>
-                            <p>座右铭：NOTHING IMPOSSIBLE</p>
-                        </dd>
-                    </dl>
-                </div>
-                <div class="swiper-slide page2">
-                    <h2>专业技能</h2>
-                    <img src="img/jhs_cool.png" alt="">
-                    <img src="img/jhs_js.png" alt="">
-                    <img src="img/jhs_html5.png" alt="">
-                    <img src="img/jhs_css.png" alt="">
-                    <img src="img/jhs_vue.png" alt="">
-                    <img src="img/jhs_react.png" alt="">
-                    <img src="img/jhs_nodejs.png" alt="">
-                </div>
-                <div class="swiper-slide page3"></div>
-                <div class="swiper-slide page4"></div>
-                <div class="swiper-slide page5"></div>
-                <div class="swiper-slide page6"></div>
-            </div>
-        </div>
-    </section>
-</div>
-<!--IMPORT JS-->
-<script src="js/zepto.min.js"></script>
-<script src="js/touch.js"></script>
-<script src="js/callbacks.js"></script>
+        <img src="img/cube_tip.png" alt="" class="tip" />
+      </section>
 
-<script src="js/swiper-3.4.2.min.js"></script>
-<script src="js/makisu.min.js"></script>
-<script src="js/prefixfree.min.js"></script>
-<script src="js/index.js"></script>
-</body>
+      <!-- DETAIL -->
+      <section class="detailBox">
+        <!-- RETURN -->
+        <a href="javascript:;" class="returnLink"></a>
+        <!-- SWIPER -->
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide page1">
+              <dl id="makisuBox" class="makisuBox">
+                <dt>自我介绍</dt>
+                <dd>
+                  <em>01</em>
+                  <p>姓名：钟俊雄</p>
+                </dd>
+                <dd>
+                  <em>02</em>
+                  <p>性别：男</p>
+                </dd>
+                <dd>
+                  <em>03</em>
+                  <p>年龄：22</p>
+                </dd>
+                <dd>
+                  <em>04</em>
+                  <p>在读学校：东莞理工学院</p>
+                </dd>
+                <dd>
+                  <em>05</em>
+                  <p>编程语言：JavaScript、css3</p>
+                </dd>
+                <dd>
+                  <em>06</em>
+                  <p>户籍：广东省兴宁市</p>
+                </dd>
+                <dd>
+                  <em>07</em>
+                  <p>学历：本科</p>
+                </dd>
+                <dd>
+                  <em>08</em>
+                  <p>工作经验：null</p>
+                </dd>
+                <dd>
+                  <em>09</em>
+                  <p>邮箱：me@junxio.site</p>
+                </dd>
+                <dd>
+                  <em>10</em>
+                  <p>tel：13049896626</p>
+                </dd>
+                <dd>
+                  <em>11</em>
+                  <p>github.com/junxio220</p>
+                </dd>
+                <dd>
+                  <em>11</em>
+                  <p>jianshu.com/u/8c0f62fa164f</p>
+                </dd>
+              </dl>
+            </div>
+            <div class="swiper-slide page2">
+              <h2>前端技能</h2>
+              <img src="img/smile.svg" alt="smile">
+              <img src="img/JS.svg" alt="JS">
+              <img src="img/vue.svg" alt="vue">
+              <img src="img/react.svg" alt="react">
+              <img src="img/css.svg" alt="css">
+              <img src="img/nodejs.svg" alt="node">
+              <img src="img/jquery.svg" alt="jquery">
+            </div>
+            <div class="swiper-slide page3">更多详情：junxio.site</div>
+            <div class="swiper-slide page4">更多详情：junxio.site</div>
+            <div class="swiper-slide page5">更多详情：junxio.site</div>
+            <div class="swiper-slide page6">更多详情：junxio.site</div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- IMPORT JS -->
+    <script src="js/zepto.min.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/callbacks.js"></script>
+    <script src="js/swiper-3.4.2.min.js"></script>
+    <script src="js/makisu.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
 </html>

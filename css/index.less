@@ -1,12 +1,21 @@
-@import "../../publicLab/reset.less";
+@import "reset.less";
 @import "animate.min.less";
 @import "swiper-3.4.2.min.less";
+
+.pageUnity() {
+  color: #fff;
+  line-height: 1;
+  font-size: .3rem;
+  text-align: center;
+  line-height: 100vh;
+}
 
 html {
   font-size: 100px; /*640px: 1RM = 100px*/
 }
 
-html, body {
+html,
+body {
   position: relative;
   height: 100%;
   overflow: hidden;
@@ -23,7 +32,11 @@ html, body {
   z-index: -3;
 }
 
-.loadingBox, .phoneBox, .messageBox, .cubeBox, .detailBox {
+.loadingBox,
+.phoneBox,
+.messageBox,
+.cubeBox,
+.detailBox {
   display: none;
   position: relative; //=>让当前区域的后代元素都相对于本区域定位
   height: 100%;
@@ -38,38 +51,38 @@ html, body {
     position: absolute;
     top: 50%;
     left: 0;
-    margin-top: unit((-1.4/2)+(-1.5), rem);
+    margin-top: unit((-1.4/2)+ (-1.5), rem);
     width: 100%;
     height: 1.4rem;
 
     text-align: center;
     color: #fff;
-    letter-spacing: .04rem;
+    letter-spacing: 0.04rem;
 
     h1 {
-      line-height: .75rem;
-      font-size: .5rem;
+      line-height: 0.75rem;
+      font-size: 0.5rem;
     }
 
     h2 {
-      margin-top: .2rem;
-      line-height: .45rem;
-      font-size: .25rem;
+      margin-top: 0.2rem;
+      line-height: 0.45rem;
+      font-size: 0.25rem;
     }
   }
 
   .progress {
     @w: 4.6;
-    @h: .3;
+    @h: 0.3;
     position: absolute;
     top: 50%;
     left: 50%;
-    margin-left: unit(-@w/2, rem);
-    margin-top: unit(-@h/2+.5, rem);
+    margin-left: unit(-@w / 2, rem);
+    margin-top: unit(-@h / 2+0.5, rem);
     width: unit(@w, rem);
     height: unit(@h, rem);
     background: #fff;
-    border-radius: unit(@h/2, rem);
+    border-radius: unit(@h / 2, rem);
 
     .run {
       position: absolute;
@@ -77,10 +90,20 @@ html, body {
       left: 0;
       width: 0;
       height: unit(@h, rem);
-      border-radius: unit(@h/2, rem);
-      transition: .3s;
+      border-radius: unit(@h / 2, rem);
+      transition: 0.3s;
 
-      background: -webkit-linear-gradient(left bottom, #5cb85c 0%, #5cb85c 25%, #74c274 25%, #74c274 50%, #5cb85c 50%, #5cb85c 75%, #74c274 75%, #74c274 100%);
+      background: -webkit-linear-gradient(
+        left bottom,
+        #5cb85c 0%,
+        #5cb85c 25%,
+        #74c274 25%,
+        #74c274 50%,
+        #5cb85c 50%,
+        #5cb85c 75%,
+        #74c274 75%,
+        #74c274 100%
+      );
       background-size: unit(@h, rem) unit(@h, rem);
       animation: loadingMove 1s linear infinite both;
     }
@@ -92,7 +115,7 @@ html, body {
     background-position: 0 0;
   }
   100% {
-    background-position: 0 -.3rem;
+    background-position: 0 -0.3rem;
   }
 }
 
@@ -113,7 +136,7 @@ html, body {
 
   .header {
     position: absolute;
-    top: .5rem;
+    top: 0.5rem;
     left: 50%;
     margin-left: unit(-2.62/2, rem);
     width: 2.62rem;
@@ -126,12 +149,12 @@ html, body {
 
     .time {
       display: none;
-      margin-top: .1rem;
-      line-height: .3rem;
+      margin-top: 0.1rem;
+      line-height: 0.3rem;
       text-align: center;
       color: #fff;
-      font-size: .3rem;
-      letter-spacing: .05rem;
+      font-size: 0.3rem;
+      letter-spacing: 0.05rem;
     }
   }
 
@@ -139,16 +162,16 @@ html, body {
     position: absolute;
     left: 50%;
     margin-left: unit(-5.2/2, rem);
-    bottom: .3rem;
+    bottom: 0.3rem;
     width: 5.2rem;
-    height: 3.6rem;
+    height: 3.8rem;
     background: url("../img/call.png") no-repeat;
     background-size: 100% 100%;
 
     .touch {
       position: absolute;
-      right: .33rem;
-      bottom: .5rem;
+      right: 0.33rem;
+      bottom: 0.5rem;
       z-index: 10;
       width: 1.42rem;
       height: 1.42rem;
@@ -157,11 +180,10 @@ html, body {
       .touch;
       z-index: -1;
       box-sizing: border-box;
-      border: .03rem solid #0F0;
+      border: 0.03rem solid #0f0;
       border-radius: 50%;
-      animation: listenTouchmove .8s linear infinite both;
+      animation: listenTouchmove 0.8s linear infinite both;
     }
-
   }
 
   .listen {
@@ -170,7 +192,7 @@ html, body {
 
   .detail {
     position: absolute;
-    bottom: .3rem;
+    bottom: 0.3rem;
 
     left: 50%;
     margin-left: unit(-5.2/2, rem);
@@ -180,12 +202,12 @@ html, body {
     background-size: 100% 100%;
 
     //=>init positon
-    transition: .5s;
+    transition: 0.5s;
     transform: translateY(6.89rem);
 
     .touch {
       position: absolute;
-      bottom: .23rem;
+      bottom: 0.23rem;
       z-index: 10;
       left: 50%;
       margin-left: unit(-1.32/2, rem);
@@ -208,48 +230,48 @@ html, body {
 .messageBox {
   background: #eaeaea;
   .talkBox {
-    margin-top: .2rem;
-    transition: .3s;
+    margin-top: 0.2rem;
+    transition: 0.3s;
     li {
       position: relative;
       min-width: 2.4rem;
       max-width: 3.6rem;
-      margin-bottom: .4rem;
-      padding: .25rem;
-      line-height: .4rem;
-      font-size: .26rem;
-      border-radius: .1rem;
+      margin-bottom: 0.4rem;
+      padding: 0.25rem;
+      line-height: 0.4rem;
+      font-size: 0.26rem;
+      border-radius: 0.1rem;
       color: #000;
 
       //=>init position
       opacity: 0;
-      transition: .3s;
+      transition: 0.3s;
       transform: translateY(1rem);
 
       img {
         position: absolute;
-        width: .82rem;
-        height: .82rem;
+        width: 0.82rem;
+        height: 0.82rem;
         border-radius: 50%;
       }
 
       i {
         position: absolute;
-        top: .2rem;
-        width: .1rem;
-        height: .2rem;
+        top: 0.2rem;
+        width: 0.1rem;
+        height: 0.2rem;
       }
       &.student {
         float: left;
         margin-left: 1.25rem;
         background: #fff;
-        border: .02rem solid #cacaca;
+        border: 0.02rem solid #cacaca;
         img {
           top: -0.02rem;
           left: -1rem;
         }
         i {
-          left: -.1rem;
+          left: -0.1rem;
           background: url("../img/arrow_l.png") no-repeat;
           background-size: 100%;
         }
@@ -259,18 +281,17 @@ html, body {
         float: right;
         margin-right: 1.25rem;
         background: #a2e45c;
-        border: .02rem solid #96b474;
+        border: 0.02rem solid #96b474;
         img {
           top: -0.02rem;
           right: -1rem;
         }
         i {
-          right: -.1rem;
+          right: -0.1rem;
           background: url("../img/arrow_R.png") no-repeat;
           background-size: 100%;
         }
       }
-
     }
   }
 
@@ -284,28 +305,28 @@ html, body {
     background-size: 100%;
     //=>init position
 
-    transition: .3s;
+    transition: 0.3s;
     transform: translateY(4.8rem);
 
     span {
       display: none;
       position: absolute;
-      top: .25rem;
+      top: 0.25rem;
       left: 1rem;
       width: 4rem;
-      height: .4rem;
-      line-height: .4rem;
-      font-size: .25rem;
+      height: 0.4rem;
+      line-height: 0.4rem;
+      font-size: 0.25rem;
       color: #000;
     }
 
     .submit {
       display: none;
       position: absolute;
-      right: .06rem;
-      bottom: .02rem;
+      right: 0.06rem;
+      bottom: 0.02rem;
       width: 1.4rem;
-      height: .74rem;
+      height: 0.74rem;
       background: url("../img/enter.png") no-repeat;
       background-size: 100% 100%;
     }
@@ -320,10 +341,10 @@ html, body {
   .tip {
     position: absolute;
     left: 50%;
-    bottom: .5rem;
+    bottom: 0.5rem;
     margin-left: unit(-1.7/2, rem);
     width: 1.7rem;
-    height: .44rem;
+    height: 0.44rem;
   }
 
   .box {
@@ -346,7 +367,6 @@ html, body {
         width: 100%;
         height: 100%;
       }
-
     }
   }
 
@@ -356,29 +376,29 @@ html, body {
   @l: unit(5.1, rem);
   .box {
     transform-style: preserve-3d;
-    transform: scale(.6) rotateX(-20deg) rotateY(45deg);
-    transition: .3s;
+    transform: scale(0.6) rotateX(-20deg) rotateY(45deg);
+    transition: 0.3s;
     li {
       //=> 正反面
       &:nth-child(1) {
-        transform: translateZ(@l/2);
+        transform: translateZ(@l / 2);
       }
       &:nth-child(2) {
-        transform: translateZ(-@l/2) rotateY(180deg);
+        transform: translateZ(-@l / 2) rotateY(180deg);
       }
       //=> 左右
       &:nth-child(3) {
-        transform: translateX(-@l/2) rotateY(-90deg);
+        transform: translateX(-@l / 2) rotateY(-90deg);
       }
       &:nth-child(4) {
-        transform: translateX(@l/2) rotateY(90deg);
+        transform: translateX(@l / 2) rotateY(90deg);
       }
       //=> 上下
       &:nth-child(5) {
-        transform: translateY(-@l/2) rotateX(90deg);
+        transform: translateY(-@l / 2) rotateX(90deg);
       }
       &:nth-child(6) {
-        transform: translateY(@l/2) rotateX(-90deg);
+        transform: translateY(@l / 2) rotateX(-90deg);
       }
     }
   }
@@ -390,15 +410,16 @@ html, body {
   .returnLink {
     position: absolute;
     z-index: 99;
-    right: .2rem;
-    top: .2rem;
-    width: .64rem;
-    height: .64rem;
-    background: url("../img/jhs_return.png") no-repeat;
-    background-size: 100% 100%;
+    left: 0.2rem;
+    top: 0.2rem;
+    width: 0.64rem;
+    height: 0.64rem;
+    background: url("../img/left.svg") no-repeat;
+    background-size: cover;
   }
 
-  .swiper-container, .swiper-slide {
+  .swiper-container,
+  .swiper-slide {
     position: relative;
     height: 100%;
     overflow: hidden;
@@ -408,43 +429,47 @@ html, body {
   /*PAGE1*/
   .page1 {
     perspective: 2000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #5975ff;
 
-    dl {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      margin: unit(-6.6/2, rem) 0 0 unit(-5.4/2, rem);
+    .makisuBox {
       width: 5.4rem;
-      height: 6.6rem;
       transform-style: preserve-3d;
+      border-radius: 3px;
+      overflow: hidden;
 
-      dt, dd {
+      dt,
+      dd {
         color: black;
         box-sizing: border-box;
-        height: .6rem;
-        line-height: .6rem;
-        background: #8fbb4c;
+        height: 0.7rem;
+        line-height: 0.7rem;
+        background: #fff;
       }
       dt {
-        font-size: .4rem;
-        color: yellow;
+        font-size: 0.4rem;
+        font-weight: 600;
+        color: #000;
         text-align: center;
       }
 
       dd {
-        border-top: .02rem dashed rgba(255, 255, 255, .3);
+        border-top: 0.02rem dashed rgba(255, 255, 255, 0.3);
 
-        em, p {
+        em,
+        p {
           display: inline-block;
         }
         em {
           margin: 0 0.15rem 0.1rem 0.15rem;
-          width: .42rem;
-          height: .42rem;
-          line-height: .42rem;
+          width: 0.42rem;
+          height: 0.42rem;
+          line-height: 0.42rem;
           text-align: center;
           color: #fff;
-          font-size: .2rem;
+          font-size: 0.2rem;
           font-style: normal;
           background: url("../img/jhs_em.png") no-repeat;
           background-size: 100% 100%;
@@ -452,7 +477,7 @@ html, body {
         }
         p {
           margin-bottom: -0.02rem;
-          font-size: .28rem;
+          font-size: 0.28rem;
           width: 4rem;
           height: 0.58rem;
           text-overflow: ellipsis;
@@ -460,108 +485,112 @@ html, body {
           overflow: hidden;
           vertical-align: top;
         }
-      }
 
+      }
     }
   }
 
   .page2 {
-    background: #FFF9C1;
+    background: #ef5350;;
 
-    h2{
+    h2 {
       position: absolute;
       left: 0;
-      top: .8rem;
+      top: 0.8rem;
       width: 100%;
-      line-height: .9rem;
+      line-height: 0.9rem;
       text-align: center;
       font-size: 0.6rem;
-      font-weight: lighter;
+      font-weight: 600;
+      color: #fff;
     }
 
-    img{
+    img {
       position: absolute;
       top: 50%;
       left: 50%;
-      margin: -.48rem 0 0 -.48rem;
+      margin: -0.48rem 0 0 -0.48rem;
       width: 0.96rem;
       height: 0.96rem;
 
       /*&:nth-child(1){} //=> .page2 img:nth-child(1) 获取page2下第一个子元素(并且第一个子元素的标签需要是img)*/
       //=> 首先获取page2中所有的img，然后再获取所有的IMG中的第一个
-      &:nth-of-type(1){
-        margin: unit(-0.96/2,rem) 0 0 unit(-0.96/2,rem);
+      &:nth-of-type(1) {
+        margin: unit(-0.96/2, rem) 0 0 unit(-0.96/2, rem);
         width: 0.96rem;
         height: 0.96rem;
       }
     }
 
-    h2,img{
+    h2,
+    img {
       opacity: 0;
     }
   }
 
-  #page2{
-    h2{
+  #page2 {
+    h2 {
       animation: zoomInDown 1s both;
     }
 
-    img{
-      &:not(:nth-of-type(1)){
-        transition: .3s;
+    img {
+      &:not(:nth-of-type(1)) {
+        transition: 0.3s;
         opacity: 1;
-        animation: swing 0.8s .3s infinite both;
+        animation: swing 0.8s 0.3s infinite both;
       }
-      &:nth-of-type(1){
+      &:nth-of-type(1) {
         opacity: 1;
         animation: shake 2s both;
       }
       //=>上
-      &:nth-of-type(2){
+      &:nth-of-type(2) {
         margin-top: -2.9rem;
       }
       // 右上
-      &:nth-of-type(3){
+      &:nth-of-type(3) {
         margin-top: -1.7rem;
         margin-left: 1.5rem;
       }
       // 右下
-      &:nth-of-type(4){
-        margin-top:  .7rem;
+      &:nth-of-type(4) {
+        margin-top: 0.7rem;
         margin-left: 1.5rem;
       }
       // 下
-      &:nth-of-type(5){
+      &:nth-of-type(5) {
         margin-top: 1.9rem;
       }
       // 左下
-      &:nth-of-type(6){
-        margin-top: .7rem;
+      &:nth-of-type(6) {
+        margin-top: 0.7rem;
         margin-left: -2.5rem;
       }
       // 左上
-      &:nth-of-type(7){
+      &:nth-of-type(7) {
         margin-top: -1.7rem;
         margin-left: -2.5rem;
       }
     }
-
   }
 
   .page3 {
-    background: bisque;
+    background: #ffd400;
+    .pageUnity;
   }
 
   .page4 {
-    background: #faca71;
+    background: #1b315e;
+    .pageUnity();
   }
 
   .page5 {
-    background: #fbffe8;
+    background: #f36c21;
+    .pageUnity();
   }
 
   .page6 {
-    background: #5975ff;
+    background: #6f60aa;
+    .pageUnity();
   }
-
 }
